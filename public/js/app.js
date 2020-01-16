@@ -20,7 +20,7 @@ weatherForm.addEventListener('submit', (e) => {
             } else {
                 message1.textContent = data.location
                 message2.textContent = data.forecast.summary + ' It is currently ' + data.forecast.temperature
-                    + ' degrees. There is currently a ' + data.forecast.precipProbability + '% chance of precipitation.'
+                    + ' degrees. There is currently a ' + data.forecast.precipProbability * 100 + '% chance of precipitation.'
             }
         })
     })
