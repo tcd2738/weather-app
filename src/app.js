@@ -1,8 +1,11 @@
 const request = require('request')
 const path = require('path')
 const hbs = require('hbs')
+
 const express = require('express')
 const app = express()
+// allows heroku to access and set port
+const port = process.env.PORT || 3000
 
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
@@ -95,6 +98,6 @@ app.get('*', (req, res) => {
     res.render('404')
 })
 
-app.listen(3000, () => {
-    console.log('server is up on port 3000')
+app.listen(port, () => {
+    console.log('server is up on port ' + port)
 })
